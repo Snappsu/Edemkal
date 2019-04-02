@@ -1,3 +1,3 @@
-# Edemkal Safari
+# Edemkal
 ## What is this?
 I don't know yet.
