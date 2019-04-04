@@ -298,15 +298,15 @@ function compileForm () {
   //Compiles and updates output
     document.getElementById("output").value = `<< set $` + npcOrEnemy() + `.` + document.getElementById("code-name").value + ` = {
   stats: {
-    maxVit: "` + document.getElementById("m-vit").value + `",
-    vit: "` + document.getElementById("m-vit").value + `",
-    maxSp: "` + document.getElementById("m-sp").value + `",
+    maxVit: ` + document.getElementById("m-vit").value + `,
+    vit: ` + document.getElementById("m-vit").value + `,
+    maxSp: ` + document.getElementById("m-sp").value + `,
     sp: "` + document.getElementById("m-sp").value + `",
-    attack: "` + document.getElementById("atk").value + `",
-    defence: "` + document.getElementById("def").value + `",
-    speed: "` + document.getElementById("spd").value + `",
-    inelligence: "` + document.getElementById("int").value + `",
-    charisma: "` + document.getElementById("cha").value + `",
+    attack: ` + document.getElementById("atk").value + `,
+    defence: ` + document.getElementById("def").value + `,
+    speed: ` + document.getElementById("spd").value + `,
+    inelligence: ` + document.getElementById("int").value + `,
+    charisma: ` + document.getElementById("cha").value + `,
   },
   desc: {
     species: "` + document.getElementById("species").value + `",
@@ -317,9 +317,9 @@ function compileForm () {
     skin: "` + skin() + `",
     skinColor: "` + document.getElementById("skin-color").value  + `",
     nsfw: {
-      chestSize: "` + document.getElementById("chest-size").value + `",
-      penisSize: "` + document.getElementById("pp-size").value + `",
-      hasVagina: "` + document.getElementById("vagoo-toggle").value + `",
+      chestSize: ` + document.getElementById("chest-size").value + `,
+      penisSize: ` + document.getElementById("pp-size").value + `,
+      hasVagina: ` + document.getElementById("vagoo-toggle").value + `,
       },
     text: ` + document.getElementById("desc").value + `,
     },
