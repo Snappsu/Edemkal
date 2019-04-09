@@ -1,0 +1,101 @@
+body{
+    margin: 0;
+    font-family: sans-serif
+}
+
+#desktop-container{
+    background: #222;
+    position:absolute;
+    width: 100vw;
+    height:100vh;
+    z-index: 0;
+}
+
+#desktop-background{
+    background: url(https://images.unsplash.com/photo-1546984575-757f4f7c13cf);
+    background-size: cover;
+    bottom: 0;
+    position:absolute;
+    width: 100vw;
+    height:100vh;
+    z-index: -1;
+}
+
+#desktop-taskbar{
+    background: #0009;
+    bottom: 0;
+    position:absolute;
+    width: 100vw;
+    height:4vh;
+    z-index: 5;
+    display: flex;
+    justify-content:center
+}
+
+#taskbar-right{
+    background: #0000 ;
+    bottom: 0;
+    position:absolute;
+    width: 100%;
+    height:4vh;
+    z-index: 5;
+    display: flex;
+}
+
+#taskbar-left{
+    background: #0000 ;
+    bottom: 0;
+    right: 0;
+    position:absolute;
+    height:4vh;
+    z-index: 5;
+    display: flex;
+    justify-content:flex-end;
+}
+
+.taskbar-icon{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 4em;
+    display: flex;
+    z-index: 6;
+    color:#fff;
+    background: #fff0;
+    transition: .25s;
+    margin: 0 .2em;
+    cursor: pointer
+}
+
+.taskbar-icon:hover{
+    background: #fff2;
+}
+
+.taskbar-icon > .fas{
+    font-size: 2.25em;
+    transition: .25s;
+}
+.taskbar-icon:hover > .fas{
+    transform: scale(1.1);
+}
+
+.taskbar-date{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:6em;
+    display: flex;
+    z-index: 6;
+    color:#fff;
+    background: #fff0;
+    transition: .25s;
+    margin: 0 .2em;
+    cursor: pointer
+}
+
+.taskbar-date:hover{
+    background: #fff2;
+}
+
+
+
