@@ -29,7 +29,7 @@ body{
     height:4vh;
     z-index: 5;
     display: flex;
-    justify-content:center
+    justify-content:center;
 }
 
 #taskbar-right{
@@ -66,7 +66,6 @@ body{
     margin: 0 .2em;
     cursor: pointer
 }
-
 .taskbar-icon:hover{
     background: #fff2;
 }
@@ -80,6 +79,7 @@ body{
 }
 
 .taskbar-date{
+    font-weight: bold;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -92,10 +92,48 @@ body{
     margin: 0 .2em;
     cursor: pointer
 }
-
 .taskbar-date:hover{
     background: #fff2;
 }
 
+#desktop-screen{
+    position: absolute;
+    top:0;
+    height: 96vh;
+    width: 100vw;
+}
 
+.window-container{
+    position: absolute;
+    z-index: 2;
+    width: 500px;
+    height: 500px;
+    background: #555;
+    border: solid 1px #fff; 
+}
+.window-container:hover{
+    cursor:grab;
+}
+.window-container:active{
+    cursor:grabbing;
+}
 
+.window-content{
+    position: absolute;
+    left: 4px;
+    top:30px;
+    width: calc(100% - 8px);
+    height:calc(100% - 34px);
+    background: #fff;
+    cursor: auto;
+}
+
+.window-top{
+    position: absolute;
+    width: calc(100%);
+    height: 30px;
+    background: #555;
+    cursor: auto;
+    display: flex;
+    justify-content:center;
+}
