@@ -1,5 +1,3 @@
-
-
 class Window {
     constructor(name, title, xPos, yPos, width, height){
         this.name = name;
@@ -14,6 +12,36 @@ class Window {
     createWindow(){
         document.getElementById("desktop-screen").innerHTML = document.getElementById("desktop-screen").innerHTML+this.HTML;
     }
+}
+
+var mouseDown = 0;
+var cursorStartX=1;
+var cursorStartY=1;
+
+var windows = [];
+var helpWindow = new Window("helpWindow","Help", 50, 50, 250, 250);
+
+function parseWindow(name,title,xPos,yPos,width,height){
+    var out =` 
+            <div style="left: `+ xPos +`px; top:`+ yPos +`px; width:`+ width +`px; height:`+ height +`px; " class="window-container" id="`+ name +`">
+                <div class="window-top" onmousemove="moveWindow(event);" onmousedown="cursorDown(event);" onmouseup="cursorUp(event)">
+                    <div class="window-top-title">`+ title +`</div>
+                    <div class="window-top-icon"></div>
+                </div>
+                <div class="window-content">I'm a test window!</div>
+            </div>
+    `;
+    return out
+}
+
+function cursorDown(e) {
+  console.log(e)
+  cursorStartX = e.clientX;
+  cursorStartY = e.clientY;
+  mouseDown=1;
+}
+function cursorUp(e) {
+  mouseDown=0;
 }
 
 function getWindows(){
@@ -44,21 +72,20 @@ function showTime(){
     setTimeout(showTime, 1000);
 }
 
-function parseWindow(name,title,xPos,yPos,width,height){
-    var out =` 
-            <div style="left: `+ xPos +`; top:`+ yPos +`; width:`+ width +`; height:`+ height +`; " class="window-container" id="`+ name +`">
-                <div class="window-top">
-                    <div class="window-top-title">`+ title +`</div>
-                    <div class="window-top-icon"></div>
-                </div>
-                <div class="window-content">I'm a test window!</div>
-            </div>
-    `;
-    return out
-}
 
-var windows = []; // create an empty array
-var helpWindow = new Window("helpWindow","Help", "50px", "50px", "250px", "250px");
+
+function moveWindow(e) {
+  if(mouseDown==1){
+        var windowName = e.path[1].id;
+        console.log(window[windowName])
+        var dX = (e.clientX-cursorStartX);
+        var dY = (e.clientY-cursorStartY);
+        window[windowName]["xPos"] = window[windowName]["xPos"] + dX;
+        window[windowName]["yPos"] = window[windowName]["yPos"] + dY;
+        //document.getElementById(windowName).style.left = window[windowName].xPos; +"px";
+        //document.getElementById(windowName).style.top = window[windowName].yPos; +"px";
+  }
+}
 
 helpWindow.createWindow();
 showTime();
