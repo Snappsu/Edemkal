@@ -44,7 +44,7 @@ function showTime(){
 
 function parseWindow(name,title,xPos,yPos){
     var out =` 
-            <div style="left: `+ xPos +`px; top:`+ yPos +`px; " class="window-container" id="`+ name +`-window">
+            <div style="left: `+ xPos +`px; top:`+ yPos +`px; " class="window-container" id="`+ name +`">
                 <div class="window-top">
                     <div class="window-top-title">`+ title +`</div>
                     <div class="window-top-icon"></div>
