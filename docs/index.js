@@ -1,13 +1,15 @@
 
 
 class Window {
-    constructor(name, title, xPos, yPos){
+    constructor(name, title, xPos, yPos, width, height){
         this.name = name;
         this.title = title;
         this.xPos = xPos;
         this.yPos = yPos;
+        this.width = width;
+        this.height = height;
         this.visble = false;
-        this.HTML = parseWindow(name,title,xPos,yPos)
+        this.HTML = parseWindow(name,title,xPos,yPos,width,height);
     }
     createWindow(){
         document.getElementById("desktop-screen").innerHTML = document.getElementById("desktop-screen").innerHTML+this.HTML;
@@ -42,9 +44,9 @@ function showTime(){
     setTimeout(showTime, 1000);
 }
 
-function parseWindow(name,title,xPos,yPos){
+function parseWindow(name,title,xPos,yPos,width,height){
     var out =` 
-            <div style="left: `+ xPos +`px; top:`+ yPos +`px; " class="window-container" id="`+ name +`">
+            <div style="left: `+ xPos +`; top:`+ yPos +`; width:`+ width +`; height:`+ height +`; " class="window-container" id="`+ name +`">
                 <div class="window-top">
                     <div class="window-top-title">`+ title +`</div>
                     <div class="window-top-icon"></div>
@@ -56,7 +58,7 @@ function parseWindow(name,title,xPos,yPos){
 }
 
 var windows = []; // create an empty array
-var helpWindow = new Window("helpWindow","Help", 50, 50);
+var helpWindow = new Window("helpWindow","Help", "50px", "50px", "250px", "250px");
 
 helpWindow.createWindow();
 showTime();
