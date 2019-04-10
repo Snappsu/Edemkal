@@ -135,5 +135,13 @@ body{
     background: #555;
     cursor: auto;
     display: flex;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
+}
+
+.window-top-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: monospace;
+    color: #fff;
 }

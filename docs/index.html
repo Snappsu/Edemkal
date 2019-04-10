@@ -8,13 +8,6 @@
         
         </div>
         <div id="desktop-screen">
-            <div class="window-container" id="intro-window">
-                <div class="window-top">
-                    <div class="window-top-title">Test Window</div>
-                    <div class="window-top-icon"></div>
-                </div>
-                <div class="window-content">I'm a test window!</div>
-            </div>
         </div>
         <div id=desktop-taskbar>
             <div id="taskbar-right">
@@ -41,12 +34,15 @@
                 <div class="taskbar-icon">
                     <i class="fas fa-keyboard"></i>
                 </div>
-                <div class="taskbar-icon">
+                <div class="taskbar-icon" onclick='var settingsWindow = new Window("settingsWindow","Settings", 50, 50); settingsWindow.createWindow();'>
                     <i class="fas fa-cogs"></i>
                 </div>
+                <div class="taskbar-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>                
                 <div class="taskbar-date">
                     <div id="time-widget" onload="showTime()">
-                        <span id="time-text">H-Hewwo?</span>
+                        <span id="time-text"></span>
                     </div>
                 </div>
             </div>
